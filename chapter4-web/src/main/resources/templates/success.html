@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Success！！</h1>
+
+<hr/>
+<!-- th:text 将div里面的文本内容设置为变量值 ,不转义特殊字符
+     th:utext 将div里面的文本内容设置为变量值 ,转义特殊字符
+    th:id 将div的id值设为该变量
+    th:class 将div的class属性设置为该变量
+-->
+<div th:text="${hello}" th:id="${hello}" th:class="${hello}"></div>
+<div th:utext="${hello}" th:id="${hello}" th:class="${hello}"></div>
+
+<hr>
+<!-- th:each 每次比遍历都会生成一个新的标签 -->
+<!--：3个h4标签-->
+<h4 th:text="${user}" th:each="user : ${users}"></h4>
+
+<hr>
+<h4>
+    <!--：3个span标签-->
+    <span th:text="${user}" th:each="user : ${users}"></span>
+</h4>
+
+</body>
+</html>
