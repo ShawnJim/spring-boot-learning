@@ -1,6 +1,5 @@
 package com.shawn.chapter1;
 
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,12 +19,12 @@ public class Chapter1Application {
     }
 
     @GetMapping("demo1")
-    public String demo1(){
+    public String demo1() {
         return "hello shawn";
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx){
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         //目的
         return args -> {
             System.out.println("看看 SpringBoot 默认为我们提供的bean");
