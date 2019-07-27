@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/chapter6_mybatis?serverTimezone=UTC
+    username: root
+    password: 1234
+    # 数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    #   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+mybatis:
+  #配置版配置 指定mapper.xml文件地址
+  mapper-locations: classpath*:com/shawn/chapter6/mapper/*.xml
+  #mapper-locations: classpath*:mapper/*.xml  # 这种配置需要自己在resources目录下建立mapper文件夹进行存放
+  # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+  configuration:
+    map-underscore-to-camel-case: true
