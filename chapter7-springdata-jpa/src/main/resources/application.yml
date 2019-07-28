@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/chapter7_jpa?serverTimezone=UTC
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      #     更新或者创建数据表结构
+      ddl-auto: update
+    # 程序执行过程显示sql
+    show-sql: true
